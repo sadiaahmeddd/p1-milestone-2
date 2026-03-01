@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Pokédex API Client</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="/style.css" />
+</head>
+<body>
+  <header class="wrap">
+    <h1>Pokédex API</h1>
+    <p class="muted">View, filter, add, and edit Pokémon without writing code.</p>
+    <a href="/docs">API Docs</a>
+  </header>
+
+  <main class="wrap grid">
+    <section class="card">
+      <h2>Search / Filter Pokémon</h2>
+
+      <form id="searchForm">
+        <label>Name contains <input name="name" placeholder="pika" /></label>
+        <label>Type equals <input name="type" placeholder="Fire" /></label>
+        <label>Weakness equals <input name="weakness" placeholder="Ice" /></label>
+        <label>Limit <input name="limit" type="number" min="1" placeholder="10" /></label>
+        <button type="submit">Fetch</button>
+      </form>
+
+      <button id="typesBtn" type="button">Get Types</button>
+    </section>
+
+    <section class="card">
+      <h2>Add Pokémon</h2>
+      <form id="addForm">
+        <label>ID <input name="id" required /></label>
+        <label>Num <input name="num" required placeholder="999" /></label>
+        <label>Name <input name="name" required /></label>
+        <label>Type <input name="type" required placeholder="Fire,Dragon" /></label>
+        <button type="submit">Add</button>
+      </form>
+
+      <h2>Edit Pokémon</h2>
+      <form id="editForm">
+        <label>ID <input name="id" required /></label>
+        <label>Name (optional) <input name="name" /></label>
+        <label>Type (optional) <input name="type" placeholder="Water" /></label>
+        <label>Weaknesses (optional) <input name="weaknesses" placeholder="Electric,Grass" /></label>
+        <button type="submit">Edit</button>
+      </form>
+    </section>
+
+    <section class="card full">
+      <h2>Response</h2>
+      <div class="muted" id="meta"></div>
+      <pre id="output">{}</pre>
+    </section>
+  </main>
+
+  <script src="/client.js"></script>
+</body>
+</html>

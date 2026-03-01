@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Pokédex API Docs</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="/style.css" />
+</head>
+<body>
+
+
+    
+  <header class="wrap">
+    <h1>API Documentation</h1>
+    <p class="muted">All endpoints return JSON.</p>
+    <a href="/">Back to Client</a>
+  </header>
+
+  <main class="wrap">
+    <section class="card">
+      <h2>GET /api/pokemon</h2>
+      <p><b>Methods:</b> GET, HEAD</p>
+      <p><b>Query Params (optional):</b></p>
+      <ul>
+        <li>name (string) – name contains</li>
+        <li>type (string) – exact match against type array</li>
+        <li>weakness (string) – exact match against weaknesses array</li>
+        <li>limit (number) – limit results</li>
+      </ul>
+      <p><b>Returns:</b> { count: number, pokemon: Pokemon[] }</p>
+      <p><b>Example:</b> /api/pokemon?type=Fire&amp;limit=5</p>
+    </section>
+
+    <section class="card">
+      <h2>GET /api/pokemonById</h2>
+      <p><b>Methods:</b> GET, HEAD</p>
+      <p><b>Query Params (required):</b></p>
+      <ul><li>id (number) – required</li></ul>
+      <p><b>Returns:</b> Pokemon object or { error }</p>
+      <p><b>Example:</b> /api/pokemonById?id=1</p>
+    </section>
+
+    <section class="card">
+      <h2>GET /api/pokemonByNum</h2>
+      <p><b>Methods:</b> GET, HEAD</p>
+      <p><b>Query Params (required):</b></p>
+      <ul><li>num (string) – required</li></ul>
+      <p><b>Returns:</b> Pokemon object or { error }</p>
+      <p><b>Example:</b> /api/pokemonByNum?num=001</p>
+    </section>
+
+    <section class="card">
+      <h2>GET /api/types</h2>
+      <p><b>Methods:</b> GET, HEAD</p>
+      <p><b>Returns:</b> { types: string[] }</p>
+      <p><b>Example:</b> /api/types</p>
+    </section>
+
+    <section class="card">
+      <h2>POST /api/addPokemon</h2>
+      <p><b>Methods:</b> POST</p>
+      <p><b>Body Params (required):</b> id (number), num (string), name (string), type (string)</p>
+      <p><b>Content-Types:</b> application/json, application/x-www-form-urlencoded</p>
+      <p><b>Returns:</b> 201 + { message, pokemon }</p>
+      <p><b>Example (urlencoded):</b> id=999&amp;num=999&amp;name=Testmon&amp;type=Fire,Dragon</p>
+    </section>
+
+    <section class="card">
+      <h2>POST /api/editPokemon</h2>
+      <p><b>Methods:</b> POST</p>
+      <p><b>Body Params:</b> id (required), name/type/weaknesses (optional)</p>
+      <p><b>Content-Types:</b> application/json, application/x-www-form-urlencoded</p>
+      <p><b>Returns:</b> 204 No Content (success) or JSON error</p>
+      <p><b>Example (urlencoded):</b> id=999&amp;name=Editedmon</p>
+    </section>
+  </main>
+</body>
+</html>
