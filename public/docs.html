@@ -21,10 +21,10 @@
       <p><b>Methods:</b> GET, HEAD</p>
       <p><b>Query Params (optional):</b></p>
       <ul>
-        <li>name (string) – name contains</li>
-        <li>type (string) – exact match against type array</li>
-        <li>weakness (string) – exact match against weaknesses array</li>
-        <li>limit (number) – limit results</li>
+        <li>name (string) name contains</li>
+        <li>type (string) exact match against type array</li>
+        <li>weakness (string)  exact match against weaknesses array</li>
+        <li>limit (number)  limit results</li>
       </ul>
       <p><b>Returns:</b> { count: number, pokemon: Pokemon[] }</p>
       <p><b>Example:</b> /api/pokemon?type=Fire&amp;limit=5</p>
@@ -43,7 +43,7 @@
       <h2>GET /api/pokemonByNum</h2>
       <p><b>Methods:</b> GET, HEAD</p>
       <p><b>Query Params (required):</b></p>
-      <ul><li>num (string) – required</li></ul>
+      <ul><li>num (string)  required</li></ul>
       <p><b>Returns:</b> Pokemon object or { error }</p>
       <p><b>Example:</b> /api/pokemonByNum?num=001</p>
     </section>
